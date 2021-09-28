@@ -797,6 +797,14 @@ static const char *roficmd[]  = {
 	"-theme", "arthur",
        	NULL 
 };
+static const char *shutdownmenu[] = {
+        "rofi", "-show", "p", "-modi", "p:/home/martin/GitHub/jluttine/rofi-power-menu/rofi-power-menu",
+	"-theme", "arthur",
+	"-lines", "6",
+	NULL
+};
+static const char *copyqcmd[] = { "copyq", "show", NULL };
+static const char *flameshot[] = { "flameshot", "gui", NULL };
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
@@ -828,6 +836,8 @@ static Key on_empty_keys[] = {
 
 static Key keys[] = {
 	/* modifier                     key            function                argument */
+    	{ MODKEY|ShiftMask,		XK_a,	       spawn,		       {.v = copyqcmd } },
+    	{ 0,				XK_Print,      spawn,		       {.v = flameshot} },
 	#if KEYMODES_PATCH
 	{ MODKEY,                       XK_Escape,     setkeymode,             {.ui = COMMANDMODE} },
 	#endif // KEYMODES_PATCH
