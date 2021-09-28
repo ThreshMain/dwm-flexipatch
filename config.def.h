@@ -323,7 +323,7 @@ static char *statuscolors[][ColCount] = {
 #endif // BAR_POWERLINE_STATUS_PATCH
 
 #if BAR_LAYOUTMENU_PATCH
-static const char *layoutmenu_cmd = "layoutmenu.sh";
+static const char *layoutmenu_cmd = "/home/martin/.dwm/layoutmenu.sh";
 #endif
 
 #if COOL_AUTOSTART_PATCH
@@ -684,7 +684,7 @@ static const Layout layouts[] = {
 /* xkb frontend */
 static const char *xkb_layouts[]  = {
 	"en",
-	"ru",
+	"cz",
 };
 #endif // XKB_PATCH
 
@@ -789,7 +789,7 @@ static const char *dmenucmd[] = {
 	#endif // BAR_DMENUMATCHTOP_PATCH
 	NULL
 };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
