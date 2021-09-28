@@ -37,7 +37,7 @@ static const int showbar                 = 0;   /* 0 means no bar */
 #else
 static const int showbar                 = 1;   /* 0 means no bar */
 #endif // BAR_HOLDBAR_PATCH
-static const int topbar                  = 1;   /* 0 means bottom bar */
+static const int topbar                  = 0;   /* 0 means bottom bar */
 #if TAB_PATCH
 /*  Display modes of the tab bar: never shown, always shown, shown only in  */
 /*  monocle mode in the presence of several windows.                        */
@@ -689,7 +689,7 @@ static const char *xkb_layouts[]  = {
 #endif // XKB_PATCH
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #if COMBO_PATCH && SWAPTAGS_PATCH && TAGOTHERMONITOR_PATCH
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      comboview,      {.ui = 1 << TAG} }, \
@@ -790,6 +790,13 @@ static const char *dmenucmd[] = {
 	NULL
 };
 static const char *termcmd[]  = { "alacritty", NULL };
+static const char *roficmd[]  = { 
+    	"rofi", "-modi", "drun,ssh", 
+	"-show", "drun", 
+	"-icon-theme", "'Papirus'", "-show-icons", 
+	"-theme", "arthur",
+       	NULL 
+};
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
@@ -809,9 +816,13 @@ static const char *statuscmd[] = { "/bin/sh", "-c", NULL, NULL };
 
 #if ON_EMPTY_KEYS_PATCH
 static const char* firefoxcmd[] = {"firefox", NULL};
+static const char* bravecmd[] = {"brave", NULL};
+static const char* discordcmd[] = {"discord", NULL};
 static Key on_empty_keys[] = {
 	/* modifier key            function                argument */
 	{ 0,        XK_f,          spawn,                  {.v = firefoxcmd } },
+	{ 0,        XK_d,          spawn,                  {.v = bravecmd   } },
+	{ 0,        XK_b,          spawn,                  {.v = discordcmd } },
 };
 #endif // ON_EMPTY_KEYS_PATCH
 
@@ -820,8 +831,8 @@ static Key keys[] = {
 	#if KEYMODES_PATCH
 	{ MODKEY,                       XK_Escape,     setkeymode,             {.ui = COMMANDMODE} },
 	#endif // KEYMODES_PATCH
-	{ MODKEY,                       XK_p,          spawn,                  {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  {.v = termcmd } },
+	{ MODKEY,                       XK_c,          spawn,                  {.v = roficmd } },
+	{ MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } },
 	#if RIODRAW_PATCH
 	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_Return,     riospawn,               {.v = termcmd } },
@@ -944,7 +955,7 @@ static Key keys[] = {
 	#if BAR_WINTITLEACTIONS_PATCH
 	{ MODKEY|ControlMask,           XK_z,          showhideclient,         {0} },
 	#endif // BAR_WINTITLEACTIONS_PATCH
-	{ MODKEY|ShiftMask,             XK_c,          killclient,             {0} },
+	{ MODKEY,                       XK_q,          killclient,             {0} },
 	#if KILLUNSEL_PATCH
 	{ MODKEY|ShiftMask,             XK_x,          killunsel,              {0} },
 	#endif // KILLUNSEL_PATCH
