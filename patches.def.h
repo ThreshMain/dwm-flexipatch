@@ -19,7 +19,7 @@
  * Awesomebar takes precedence over fancybar.
  * https://dwm.suckless.org/patches/awesomebar/
  */
-#define BAR_AWESOMEBAR_PATCH 0
+#define BAR_AWESOMEBAR_PATCH 1
 
 /* This patch depends on statuscmd patch and adds integration with a (patched)
  * dwmblocks instance to give a clickable status bar. One must not necessarily
@@ -74,7 +74,7 @@
  *   - The text of the menu items is for display only. Name them however you want.
  * https://dwm.suckless.org/patches/layoutmenu/
  */
-#define BAR_LAYOUTMENU_PATCH 0
+#define BAR_LAYOUTMENU_PATCH 1
 
 /* Show layout symbol in bar */
 #define BAR_LTSYMBOL_PATCH 1
@@ -150,7 +150,7 @@
 /* The systray patch adds systray for the status bar.
  * https://dwm.suckless.org/patches/systray/
  */
-#define BAR_SYSTRAY_PATCH 0
+#define BAR_SYSTRAY_PATCH 1
 
 /* Show tag symbols in bar */
 #define BAR_TAGS_PATCH 1
@@ -471,7 +471,7 @@
  * respective stack in tiled layout.
  * https://dwm.suckless.org/patches/cfacts/
  */
-#define CFACTS_PATCH 0
+#define CFACTS_PATCH 1
 
 /* This patch allows color attributes to be set through the command line.
  * https://dwm.suckless.org/patches/cmdcustomize/
@@ -514,14 +514,14 @@
 /* Similarly to the dragmfact patch this allows you to click and drag clients to change the
  * cfact to adjust the client's size in the stack. This patch depends on the cfacts patch.
  */
-#define DRAGCFACT_PATCH 0
+#define DRAGCFACT_PATCH 1
 
 /* This patch lets you resize the split in the tile layout (i.e. modify mfact) by holding
  * the modkey and dragging the mouse.
  * This patch can be a bit wonky with other layouts, but generally works.
  * https://dwm.suckless.org/patches/dragmfact/
  */
-#define DRAGMFACT_PATCH 0
+#define DRAGMFACT_PATCH 1
 
 /* Simple dwmc client using a fork of fsignal to communicate with dwm.
  * To use this either copy the patch/dwmc shell script to somewhere in your path or
@@ -667,7 +667,7 @@
  * applications that assume that the window manager is using window reparenting.
  * Refer to the ISSUES secton of the dwm man page for more details.
  */
-#define LG3D_PATCH 0
+#define LG3D_PATCH 1
 
 /* By default in dwm it is possible to make an application fullscreen, then use
  * the focusstack keybindings to focus on other windows beneath the current window.
@@ -717,12 +717,12 @@
 /* This patch allows you to move and resize dwm's clients using keyboard bindings.
  * https://dwm.suckless.org/patches/moveresize/
  */
-#define MOVERESIZE_PATCH 0
+#define MOVERESIZE_PATCH 1
 
 /* This patch allows you to move clients around in the stack and swap them with the master.
  * https://dwm.suckless.org/patches/movestack/
  */
-#define MOVESTACK_PATCH 0
+#define MOVESTACK_PATCH 1
 
 /* Adds support for the _NET_CLIENT_LIST_STACKING atom, needed by certain applications like the
  * Zoom video conferencing application.
@@ -733,7 +733,7 @@
 /* Removes the border when there is only one window visible.
  * https://dwm.suckless.org/patches/noborder/
  */
-#define NOBORDER_PATCH 0
+#define NOBORDER_PATCH 1
 
 /* Enable modifying or removing dmenu in config.def.h which resulted previously in a
  * compilation error because two lines of code hardcode dmenu into dwm.
@@ -869,7 +869,7 @@
  * will be restored.
  * https://dwm.suckless.org/patches/save_floats/
  */
-#define SAVEFLOATS_PATCH 0
+#define SAVEFLOATS_PATCH 1
 
 /* The scratchpad patch allows you to spawn or restore floating terminal windows.
  * It is typically useful when one need to do some short typing.
@@ -1098,7 +1098,7 @@
 /* This patch allows you to toggle fullscreen on and off using a single shortcut key.
  * https://github.com/bakkeby/patches/blob/master/dwm/dwm-togglefullscreen-6.2.diff
  */
-#define TOGGLEFULLSCREEN_PATCH 0
+#define TOGGLEFULLSCREEN_PATCH 1
 
 /* Minor patch that lets you use the same keyboard shortcut to toggle to the previous layout if the
  * designated layout is already active.
@@ -1187,7 +1187,7 @@
  * https://www.x.org/archive/X11R7.5/doc/input/XKB-Config.html
  * https://dwm.suckless.org/patches/xkb/
  */
-#define XKB_PATCH 0
+#define XKB_PATCH 1
 
 /* Allows dwm to read colors from xrdb (.Xresources) during runtime. Compatible with
  * the float border color, awesomebar, urgentborder and titlecolor patches.
@@ -1223,12 +1223,12 @@
 /* Centered master layout.
  * https://dwm.suckless.org/patches/centeredmaster/
  */
-#define CENTEREDMASTER_LAYOUT 0
+#define CENTEREDMASTER_LAYOUT 1
 
 /* Centered floating master layout.
  * https://dwm.suckless.org/patches/centeredmaster/
  */
-#define CENTEREDFLOATINGMASTER_LAYOUT 0
+#define CENTEREDFLOATINGMASTER_LAYOUT 1
 
 /* Same as the default tile layout except clients in the master area are arranged in
  * columns (i.e. left to right).
@@ -1239,17 +1239,17 @@
 /* Deck layout.
  * https://dwm.suckless.org/patches/deck/
  */
-#define DECK_LAYOUT 0
+#define DECK_LAYOUT 1
 
 /* Fibonacci dwindle layout.
  * https://dwm.suckless.org/patches/fibonacci/
  */
-#define FIBONACCI_DWINDLE_LAYOUT 0
+#define FIBONACCI_DWINDLE_LAYOUT 1
 
 /* Fibonacci spiral layout.
  * https://dwm.suckless.org/patches/fibonacci/
  */
-#define FIBONACCI_SPIRAL_LAYOUT 0
+#define FIBONACCI_SPIRAL_LAYOUT 1
 
 /* Flextile deluxe layout.
  * A revamped, more flexible, and over-the-top version of the original flextile layout.
@@ -1260,12 +1260,12 @@
 /* Gappless grid layout.
  * https://dwm.suckless.org/patches/gaplessgrid/
  */
-#define GAPPLESSGRID_LAYOUT 0
+#define GAPPLESSGRID_LAYOUT 1
 
 /* Gridmode (grid) layout.
  * https://dwm.suckless.org/patches/gridmode/
  */
-#define GRIDMODE_LAYOUT 0
+#define GRIDMODE_LAYOUT 1
 
 /* Horizontal grid (horizgrid) layout.
  * https://dwm.suckless.org/patches/horizgrid/
