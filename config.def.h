@@ -416,9 +416,8 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "DIALOG", .isfloating = 1)
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
+	RULE(.class = "copyq", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-	RULE(.class = "Gimp", .tags = 1 << 4)
-	RULE(.class = "Firefox", .tags = 1 << 7)
 	#if SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .tags = SPTAG(0), .isfloating = 1)
 	#endif // SCRATCHPADS_PATCH
@@ -829,15 +828,15 @@ static const char* discordcmd[] = {"discord", NULL};
 static Key on_empty_keys[] = {
 	/* modifier key            function                argument */
 	{ 0,        XK_f,          spawn,                  {.v = firefoxcmd } },
-	{ 0,        XK_d,          spawn,                  {.v = bravecmd   } },
-	{ 0,        XK_b,          spawn,                  {.v = discordcmd } },
+	{ 0,        XK_b,          spawn,                  {.v = bravecmd   } },
+	{ 0,        XK_d,          spawn,                  {.v = discordcmd } },
 };
 #endif // ON_EMPTY_KEYS_PATCH
 
 static Key keys[] = {
 	/* modifier                     key            function                argument */
     	{ Mod1Mask|ControlMask,		XK_Delete,     spawn,		       {.v = shutdownmenu } },
-    	{ MODKEY|ShiftMask,		XK_a,	       spawn,		       {.v = copyqcmd } },
+    	{ ControlMask|ShiftMask,	XK_a,	       spawn,		       {.v = copyqcmd } },
     	{ 0,				XK_Print,      spawn,		       {.v = flameshot} },
 	#if KEYMODES_PATCH
 	{ MODKEY,                       XK_Escape,     setkeymode,             {.ui = COMMANDMODE} },
