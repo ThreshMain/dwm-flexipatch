@@ -832,12 +832,14 @@ static const char *statuscmd[] = { "/bin/sh", "-c", NULL, NULL };
 #if ON_EMPTY_KEYS_PATCH
 static const char* firefoxcmd[] = {"firefox", NULL};
 static const char* bravecmd[] = {"brave", NULL};
+static const char* nautiluscmd[] = {"nautilus", NULL};
 static const char* discordcmd[] = {"discord", NULL};
 static Key on_empty_keys[] = {
 	/* modifier key            function                argument */
 	{ 0,        XK_f,          spawn,                  {.v = firefoxcmd } },
 	{ 0,        XK_b,          spawn,                  {.v = bravecmd   } },
 	{ 0,        XK_d,          spawn,                  {.v = discordcmd } },
+	{ 0,        XK_n,          spawn,                  {.v = nautiluscmd} },
 };
 #endif // ON_EMPTY_KEYS_PATCH
 
