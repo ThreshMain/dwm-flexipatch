@@ -1,6 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
+#include <X11/XF86keysym.h>
+
 #if ROUNDED_CORNERS_PATCH
 static const unsigned int borderpx       = 0;   /* border pixel of windows */
 static const int corner_radius           = 10;
@@ -804,6 +806,12 @@ static const char *shutdownmenu[] = {
 };
 static const char *copyqcmd[] = { "copyq", "show", NULL };
 static const char *flameshot[] = { "flameshot", "gui", NULL };
+static const char *volumeinc[] = { "/home/martin/GitHub/Martin/DotFiles/scripts/raise-volume", NULL };
+static const char *volumedec[] = { "/home/martin/GitHub/Martin/DotFiles/scripts/lower-volume", NULL };
+static const char *volumemute[] = { "/home/martin/GitHub/Martin/DotFiles/scripts/toggle-volume", NULL };
+static const char *playpause[] = { "playerctl", "play-pause", NULL };
+static const char *playnext[] = { "playerctl", "previous", NULL };
+static const char *playprev[] = { "playerctl", "next", NULL };
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
@@ -835,9 +843,15 @@ static Key on_empty_keys[] = {
 
 static Key keys[] = {
 	/* modifier                     key            function                argument */
-    	{ Mod1Mask|ControlMask,		XK_Delete,     spawn,		       {.v = shutdownmenu } },
-    	{ ControlMask|ShiftMask,	XK_a,	       spawn,		       {.v = copyqcmd } },
-    	{ 0,				XK_Print,      spawn,		       {.v = flameshot} },
+    { Mod1Mask|ControlMask,		    XK_Delete,     spawn,		           {.v = shutdownmenu } },
+    { ControlMask|ShiftMask,	    XK_a,	       spawn,		           {.v = copyqcmd } },
+    { 0,				            XK_Print,      spawn,		           {.v = flameshot} },
+    { 0,             XF86XK_AudioRaiseVolume,      spawn,                  {.v = volumeinc } },
+    { 0,             XF86XK_AudioLowerVolume,      spawn,                  {.v = volumedec } },
+    { 0,             XF86XK_AudioMute,             spawn,                  {.v = volumemute } },
+    { 0,             XF86XK_AudioPlay,             spawn,                  {.v = playpause } },
+    { 0,             XF86XK_AudioPrev,             spawn,                  {.v = playnext } },
+    { 0,             XF86XK_AudioNext,             spawn,                  {.v = playprev } },
 	#if KEYMODES_PATCH
 	{ MODKEY,                       XK_Escape,     setkeymode,             {.ui = COMMANDMODE} },
 	#endif // KEYMODES_PATCH
