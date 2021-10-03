@@ -791,7 +791,7 @@ static const char *dmenucmd[] = {
 	#endif // BAR_DMENUMATCHTOP_PATCH
 	NULL
 };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 static const char *roficmd[]  = { 
     	"rofi", "-modi", "drun,ssh", 
 	"-show", "drun", 
