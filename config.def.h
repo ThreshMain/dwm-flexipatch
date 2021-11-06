@@ -835,10 +835,12 @@ static const char *statuscmd[] = { "/bin/sh", "-c", NULL, NULL };
 static const char* firefoxcmd[] = {"firefox", NULL};
 static const char* bravecmd[] = {"brave", NULL};
 static const char* nautiluscmd[] = {"nautilus", NULL};
+static const char* emacs[] = { "emacsclient", "-c", "-a", "emacs", NULL};
 static const char* discordcmd[] = {"discord", NULL};
 static Key on_empty_keys[] = {
 	/* modifier key            function                argument */
 	{ 0,        XK_f,          spawn,                  {.v = firefoxcmd } },
+	{ 0,        XK_e,          spawn,                  {.v = emacs      } },
 	{ 0,        XK_b,          spawn,                  {.v = bravecmd   } },
 	{ 0,        XK_d,          spawn,                  {.v = discordcmd } },
 	{ 0,        XK_n,          spawn,                  {.v = nautiluscmd} },
@@ -849,6 +851,7 @@ static Key keys[] = {
 	/* modifier                     key            function                argument */
     { Mod1Mask|ControlMask,		    XK_Delete,     spawn,		           {.v = shutdownmenu } },
     { ControlMask|ShiftMask,	    XK_a,	       spawn,		           {.v = copyqcmd } },
+	{ ControlMask|ShiftMask,        XK_e,          spawn,                  {.v = emacs    } },
     { 0,				            XK_Print,      spawn,		           {.v = flameshot} },
     { 0,             XF86XK_AudioRaiseVolume,      spawn,                  {.v = volumeinc } },
     { 0,             XF86XK_AudioLowerVolume,      spawn,                  {.v = volumedec } },
