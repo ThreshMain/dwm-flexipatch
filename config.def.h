@@ -837,6 +837,8 @@ static const char* bravecmd[] = {"brave", NULL};
 static const char* nautiluscmd[] = {"nautilus", NULL};
 static const char* emacs[] = { "emacsclient", "-c", "-a", "emacs", NULL};
 static const char* discordcmd[] = {"discord", NULL};
+static const char* spotifycmd[] = {"spotify", NULL};
+static const char* clioncmd[] = {"clion", NULL};
 static Key on_empty_keys[] = {
 	/* modifier key            function                argument */
 	{ 0,        XK_f,          spawn,                  {.v = firefoxcmd } },
@@ -844,6 +846,8 @@ static Key on_empty_keys[] = {
 	{ 0,        XK_b,          spawn,                  {.v = bravecmd   } },
 	{ 0,        XK_d,          spawn,                  {.v = discordcmd } },
 	{ 0,        XK_n,          spawn,                  {.v = nautiluscmd} },
+	{ 0,        XK_s,          spawn,                  {.v = spotifycmd } },
+	{ 0,        XK_c,          spawn,                  {.v = clioncmd   } },
 };
 #endif // ON_EMPTY_KEYS_PATCH
 
