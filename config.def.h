@@ -863,6 +863,7 @@ static const char* emacs[] = { "emacsclient", "-c", "-a", "emacs", NULL};
 static const char* discordcmd[] = {"discord", NULL};
 static const char* spotifycmd[] = {"spotify", NULL};
 static const char* matrixcmd[] = {"kitty", "-e", "gomuks", NULL};
+static const char* patchagecmd[] = { "patchage", NULL};
 static const char* clioncmd[] = {"clion", NULL};
 static Key on_empty_keys[] = {
 	/* modifier key            function                argument */
@@ -873,6 +874,7 @@ static Key on_empty_keys[] = {
 	{ 0,        XK_n,          spawn,                  {.v = nautiluscmd} },
 	{ 0,        XK_m,          spawn,                  {.v = matrixcmd  } },
 	{ 0,        XK_s,          spawn,                  {.v = spotifycmd } },
+	{ 0,        XK_p,          spawn,                  {.v = patchagecmd} },
 	{ 0,        XK_c,          spawn,                  {.v = clioncmd   } },
 };
 #endif // ON_EMPTY_KEYS_PATCH
