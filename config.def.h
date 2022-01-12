@@ -856,6 +856,7 @@ static Key on_empty_keys[] = {
 static Key keys[] = {
 	/* modifier                     key            function                argument */
     { Mod1Mask|ControlMask,		    XK_Delete,     spawn,		           {.v = shutdownmenu } },
+    { ControlMask|ShiftMask,	    XK_Escape,	   spawn,		           {.v = shutdownmenu } },
     { ControlMask|ShiftMask,	    XK_a,	       spawn,		           {.v = copyqcmd } },
 	{ ControlMask|ShiftMask,        XK_e,          spawn,                  {.v = emacs    } },
     { 0,				            XK_Print,      spawn,		           {.v = flameshot} },
