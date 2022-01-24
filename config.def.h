@@ -825,9 +825,7 @@ static const char *roficmd[]  = {
        	NULL 
 };
 static const char *shutdownmenu[] = {
-        "rofi", "-show", "p", "-modi", "p:/home/martin/GitHub/jluttine/rofi-power-menu/rofi-power-menu",
-	"-theme", "arthur",
-	"-lines", "6",
+        "/home/martin/.config/rofi/applets/menu/powermenu.sh",
 	NULL
 };
 static const char *copyqcmd[] = { "copyq", "show", NULL };
