@@ -93,6 +93,7 @@ placemouse(const Arg *arg)
 
 				c->mon = r->mon;
 				r->mon->sel = r;
+                c->tags = m->tagset[m->seltags];
 
 				if (attachmode) {
 					if (r == r->mon->clients)
