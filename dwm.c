@@ -395,7 +395,8 @@ struct Client {
 	XkbInfo *xkb;
 	#endif // XKB_PATCH
 	#if BAR_WINICON_PATCH
-	XImage *icon;
+	unsigned int icw, ich;
+	Picture icon;
 	#endif // BAR_WINICON_PATCH
 };
 
@@ -1772,7 +1773,9 @@ drawbar(Monitor *m)
 {
 	Bar *bar;
 	
+	#if !BAR_FLEXWINTITLE_PATCH
 	if (m->showbar)
+	#endif // BAR_FLEXWINTITLE_PATCH
 		for (bar = m->bar; bar; bar = bar->next)
 			drawbarwin(bar);
 }
@@ -2324,7 +2327,6 @@ manage(Window w, XWindowAttributes *wa)
 	c->cfact = 1.0;
 	#endif // CFACTS_PATCH
 	#if BAR_WINICON_PATCH
-	c->icon = NULL;
 	updateicon(c);
 	#endif // BAR_WINICON_PATCH
 	updatetitle(c);
@@ -2437,7 +2439,7 @@ manage(Window w, XWindowAttributes *wa)
 	#endif // MAXIMIZE_PATCH / EXRESIZE_PATCH
 
 	if (!c->isfloating)
-		c->isfloating = c->oldstate = trans != None || c->isfixed;
+		c->isfloating = c->oldstate = t || c->isfixed;
 	if (c->isfloating) {
 		XRaiseWindow(dpy, c->win);
 		XSetWindowBorder(dpy, w, scheme[SchemeNorm][ColFloat].pixel);
