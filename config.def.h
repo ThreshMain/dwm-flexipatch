@@ -914,7 +914,7 @@ static const char *statuscmd[] = { "/bin/sh", "-c", NULL, NULL };
 #if ON_EMPTY_KEYS_PATCH
 static const char* firefoxcmd[] = {"firefox", NULL};
 static const char* bravecmd[] = {"brave", NULL};
-static const char* nautiluscmd[] = {"nautilus", NULL};
+static const char* nemocmd[] = {"nemo", NULL};
 static const char* emacs[] = { "emacsclient", "-c", "-a", "emacs", NULL};
 static const char* discordcmd[] = {"discord", NULL};
 static const char* spotifycmd[] = {"spotify", NULL};
@@ -927,7 +927,7 @@ static const Key on_empty_keys[] = {
 	{ 0,        XK_e,          spawn,                  {.v = emacs      } },
 	{ 0,        XK_b,          spawn,                  {.v = bravecmd   } },
 	{ 0,        XK_d,          spawn,                  {.v = discordcmd } },
-	{ 0,        XK_n,          spawn,                  {.v = nautiluscmd} },
+	{ 0,        XK_n,          spawn,                  {.v = nemocmd    } },
 	{ 0,        XK_m,          spawn,                  {.v = matrixcmd  } },
 	{ 0,        XK_s,          spawn,                  {.v = spotifycmd } },
 	{ 0,        XK_p,          spawn,                  {.v = patchagecmd} },
